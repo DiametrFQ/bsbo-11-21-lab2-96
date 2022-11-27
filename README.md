@@ -1,4 +1,4 @@
-# bsbo-11-21-lab1-96
+# bsbo-11-21-lab1-96 #2
 
 ## For start `bsbo-11-21-lab1-96`:
 1. download or clone the git repository of the program
