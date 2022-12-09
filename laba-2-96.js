@@ -130,7 +130,6 @@ const lisen = () => {
             editEnd_i   = vertexes.join('').indexOf(editEnd) 
 
             edges[editStart_i][editEnd_i] = Number(way) 
-
         } 
 
         if(input.includes("DEL_V")){ 
@@ -142,7 +141,7 @@ const lisen = () => {
             vertexes.splice(vertex_i, 1);
 
             edges.map( edge => edge.splice(vertex_i, 1))          
-            edges.splice(vertext_i, 1) 
+            edges.splice(vertex_i, 1) 
         } 
 
         if(input.includes("DEL_E")){ 
