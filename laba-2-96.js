@@ -4,30 +4,37 @@ vertexes = ["A","B","C","D","E"]
 
 edges = [ 
         /*A,B,C,D,E*/ 
-    /*A*/[0,0,1,0,0], 
-    /*B*/[0,0,1,0,0], 
+    /*A*/[0,1,0,0,0], 
+    /*B*/[1,0,0,0,0], 
     /*C*/[1,1,0,1,1], 
-    /*D*/[0,0,1,0,0], 
-    /*E*/[0,0,1,0,0], 
+    /*D*/[0,0,0,0,1], 
+    /*E*/[0,0,0,1,0], 
 ] 
 
 let vertexCount = ''
 let P = 0 
 let P_Array = [] 
+//обход в глубину
 
-const DFS = (j, count) => { 
-    vertexCount+=vertexes[j] 
-    count = 0 
-    for (let i = 0; i < edges[j].length; i++) { 
-        if(i == j) continue 
+const DFS = (j, count) => {
+    vertexCount+=vertexes[j]
+    count = 0
+    for (let i = 0; i < edges[j].length; i++) {
+        if(i == j) continue
+        //нахождение цикла
 
-        if(edges[j][i] == 1 && !vertexCount.includes(vertexes[i])){ 
-            count++ 
-            DFS(i,count) 
-        } 
-    } 
-    P_Array[P_Array.length] = count 
-}  
+        if(edges[j][i] == 1){
+            if(vertexCount.includes(vertexes[i])){
+                P++
+            }
+            else{
+                count++
+                DFS(i,count)
+            }
+        }
+    }
+    P_Array[P_Array.length] = count
+}
 
 const lisen = () => { 
 
